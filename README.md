@@ -20,7 +20,7 @@ pip install -e .
 ```
 
 ### Create Docker Environment
-To install Docker Desktop on Mac please refer [here](https://www.docker.com/get-started/).
+To install Docker Desktop on Mac/Windows please refer [here](https://www.docker.com/get-started/).
 Once the installation is complete, run the following command to check if Docker is working properly:
 ```python
 docker --version
