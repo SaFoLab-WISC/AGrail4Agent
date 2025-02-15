@@ -1,1 +1,99 @@
-# AgentGuard
+# ⛓‍💥 AgentGuard: AgentGuard: A Lifelong AgentGuardrail with Effective and Adaptive Safety Detection
+
+[Weidi Luo*](https://github.com/EddyLuo1232), [Shenghong Dai](https://scholar.google.com/citations?user=GUarSlcAAAAJ&hl=en), [Xiaogeng Liu](https://xiaogeng-liu.com/), [Peiran Li](https://scholar.google.com/citations?user=AbleBdQAAAAJ&hl=en), [Suman Banerjee](https://pages.cs.wisc.edu/~suman/), [Huan Sun](https://u.osu.edu/ihudas/people/), [Muhao Chen](https://muhaochen.github.io/), [Chaowei Xiao†](https://xiaocw11.github.io/)
+
+(*Contribute equally, †Corresponding author)
+
+[**🛎 Project Page**](https://eddyluo1232.github.io/JailBreakV28K/) | [**😀 arxiv**](https://arxiv.org/pdf/2404.03027.pdf)
+
+
+**<font color='red'>Warning: This repo contains examples of harmful agent action, and reader discretion is recommended.</font>**
+
+## 👻 Environment Configuration
+
+### Create Python environment
+```python
+conda create -n agentguard python=3.9
+conda activate agentguard
+pip install -r requirements.txt
+pip install -e .
+```
+
+### Create Docker Environment
+Installation of Docker Desktop on Mac please refer [here](https://www.docker.com/get-started/).
+Once the installation is complete, run the following command to check if Docker is working properly:
+```python
+docker --version
+```
+If installation is complete with dockerfile in the repo:
+```python
+docker build -t ubuntu .
+docker run -it ubuntu
+```
+
+### Conduct Evaluation on Safe-OS
+```python
+# we default use LlamaGuard, you can change the default evaluate model to your customized evaluate models by editing the annotated codes.
+# You can follow the LlamaGuard script in <evaluate_models> to add other evaluate models.
+python eval.py --data_path ./results/JailBreakV_28k/<your customized attack model>/JailBreakV_28K.csv
+```
+
+
+## 📰 News
+| Date       | Event    |
+|------------|----------|
+| **2024/07/09** | 🎉 Our paper is accepted by COLM 2024.|
+| **2024/06/22** | 🛠️ We have updated our version to V0.2, which allows users to customize and evaluate their attack models.|
+| **2024/04/04** | 🎁 We have posted our paper on Arxiv.|
+| **2024/04/03** | 🎉 We have released our evaluation and inference samples.|
+| **2024/03/30** | 🔥 We have released our dataset.|
+
+
+## 💡 Abstract
+With the rapid advancements in Multimodal Large Language Models (MLLMs), securing these models against malicious inputs while aligning them with human values has emerged as a critical challenge. In this paper, we investigate an important and unexplored question of whether techniques that successfully jailbreak Large Language Models (LLMs) can be equally effective in jailbreaking MLLMs. To explore this issue, we introduced JailBreakV-28K, a pioneering benchmark designed to assess the transferability of LLM jailbreak techniques to MLLMs, thereby evaluating the robustness of MLLMs against diverse jailbreak attacks. Utilizing a dataset of 2, 000 malicious queries that is also proposed in this paper, we generate 20, 000 text-based jailbreak prompts using advanced jailbreak attacks on LLMs, alongside 8, 000 image-based jailbreak inputs from recent MLLMs jailbreak attacks, our comprehensive dataset includes 28, 000 test cases across a spectrum of adversarial scenarios. Our evaluation of 10 open-source MLLMs reveals a notably high Attack Success Rate (ASR) for attacks transferred from LLMs, highlighting a critical vulnerability in MLLMs that stems from their text-processing capabilities. Our findings underscore the urgent need for future research to address alignment vulnerabilities in MLLMs from both textual and visual inputs.
+<img src="dataset.png" width="700"/>
+## 🚀 Data Composition
+
+**RedTeam-2K**: RedTeam-2K dataset, a meticulously curated collection of 2, 000 harmful queries aimed at identifying alignment vulnerabilities within LLMs and MLLMs. This dataset spans across 16 safety policies and incorporates queries from 8 distinct sources.
+<img src="distribution_used.png" width="700"/>
+
+**JailBreakV-28K**: JailBreakV-28K contains 28, 000 jailbreak text-image pairs, which include 20, 000 text-based LLM transfer jailbreak attacks and 8, 000 image-based MLLM jailbreak attacks. This dataset covers 16 safety policies and 5 diverse jailbreak methods.
+
+## 🛠️ Dataset Details
+The RedTeam-2K dataset, is a meticulously curated collection of 2, 000 harmful queries aimed at identifying alignment vulnerabilities within LLMs and MLLMs. This dataset spans 16 safety policies and incorporates queries from 8 distinct sources, including GPT Rewrite, Handcraft, GPT Generate, LLM Jailbreak Study, AdvBench, BeaverTails, Question Set, and hh-rlhf of Anthropic.
+Building upon the harmful query dataset provided by RedTeam-2K, JailBreakV-28K is designed as a comprehensive and diversified benchmark for evaluating the transferability of jailbreak attacks from LLMs to MLLMs, as well as assessing the alignment robustness of MLLMs against such attacks. Specifically, JailBreakV-28K contains 28, 000 jailbreak text-image pairs, which include 20, 000 text-based LLM transfer jailbreak attacks and 8, 000 image-based MLLM jailbreak attacks. This dataset covers 16 safety policies and 5 diverse jailbreak methods. The jailbreak methods are formed by 3 types of LLM transfer attacks that include Logic (Cognitive Overload), Persuade (Persuasive Adversarial Prompts), and Template (including both Greedy Coordinate Gradient and handcrafted strategies), and 2 types of MLLM attacks including FigStep and Query-relevant attack. The JailBreakV-28K offers a broad spectrum of attack methodologies and integrates various image types like Nature, Random Noise, Typography, Stable Diffusion (SD), Blank, and SD+Typography Images. We believe JailBreakV-28K can serve as a comprehensive jailbreak benchmark for MLLMs.
+
+## 🏆 Leaderboard
+| Model                      |  Total ASR| Transfer attack ASR|
+|----------------------------|:---------:|:------------------:|
+| OmniLMM-12B                |   58.1    |        70.2        |
+| InfiMM-Zephyr-7B           |   52.9    |        73.0        |
+| LLaMA-Adapter-v2           |   51.2    |        68.1        |
+| LLaVA-1.5-13B              |   51.0    |        65.5        |    
+| LLaVA-1.5-7B               |   46.8    |        61.4        |
+| InstructBLIP-13B           |   45.2    |        55.5        |
+| InternLM-XComposer2-VL-7B  |   39.1    |        29.3        |
+| Bunny-v1                   |   38.0    |        49.5        |
+| Qwen-VL-Chat               |   33.7    |        41.2        |
+| InstructBLIP-7B            |   26      |        46.8        |
+
+## ❌ Disclaimers
+This dataset contains offensive content that may be disturbing, This benchmark is provided for educational and research purposes only.
+
+## 📲 Contact
+- Weidi Luo: luo.1455@osu.edu
+- Siyuan Ma: siyuan.ma.pku@gmail.com
+- Xiaogeng Liu: xiaogeng.liu@wisc.edu
+- Chaowei Xiao: cxiao34@wisc.edu
+
+## 📖 BibTeX:
+```python
+@misc{luo2024jailbreakv28k,
+      title={JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks}, 
+      author={Weidi Luo and Siyuan Ma and Xiaogeng Liu and Xiaoyu Guo and Chaowei Xiao},
+      year={2024},
+      eprint={2404.03027},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR}
+}
+```
