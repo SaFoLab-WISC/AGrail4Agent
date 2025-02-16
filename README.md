@@ -8,7 +8,7 @@
 
 **<font color='red'>Warning: This repo contains examples of harmful agent action, and reader discretion is recommended.</font>**
 
-## 👻 Environment Configuration
+## 👻 Quick Start
 
 ### Create Python environment
 ```python
