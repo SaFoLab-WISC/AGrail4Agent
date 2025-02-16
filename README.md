@@ -11,9 +11,7 @@
 
 [![arxiv](https://img.shields.io/badge/Arxiv-2403.09513-red)](https://arxiv.org/pdf/2403.09513.pdf)
 [![project](https://img.shields.io/badge/Project-Page-blue)](https://rain305f.github.io/AdaShield-Project/)
-![Jailbreak Attacks](https://img.shields.io/badge/Jailbreak-Attacks-yellow.svg?style=plastic)
 ![Defenses](https://img.shields.io/badge/MultimodalLargeLanguage-Defenses-orange.svg?style=plastic)
-![Multimodal Large Language Models](https://img.shields.io/badge/MultimodalLargeLanguage-Models-green.svg?style=plastic)
 
 
 **<font color='red'>Warning: This repo contains examples of harmful agent action, and reader discretion is recommended.</font>**
