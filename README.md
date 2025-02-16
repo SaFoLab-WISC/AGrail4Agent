@@ -37,8 +37,9 @@ docker run -it ubuntu
 ```
 
 ### 3.Conduct Evaluation on Safe-OS
-Add your OPENAI_API_KEY and ANTHROPIC_API_KEY in DAS/utlis.py, then check and run the scripts on Safe-OS:
+Check and run the scripts on Safe-OS:
 ```python
+# Add your OPENAI_API_KEY and ANTHROPIC_API_KEY in DAS/utlis.py.
 bash DAS/scripts/safe_os.sh
 ```
 
