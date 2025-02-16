@@ -8,6 +8,12 @@
 
 **<font color='red'>Warning: This repo contains examples of harmful agent action, and reader discretion is recommended.</font>**
 
+
+
+
+## 💡 Abstract
+The rapid advancements in Large Language Models (LLMs) have enabled their deployment as autonomous agents for handling complex tasks in dynamic environments. These LLMs demonstrate strong problem-solving capabilities and adaptability to multifaceted scenarios. However, their use as agents also introduces significant risks, including task-specific risks, which are identified by the agent administrator based on the specific task requirements and constraints, and systemic risks, which stem from vulnerabilities in their design or interactions, potentially compromising confidentiality, integrity, or availability (CIA) of information and triggering security risks. Existing defense agencies fail to adaptively and effectively mitigate these risks. In this paper,  we propose Agent Protector, a lifelong Agent Guardrail to enhance LLM agent safety, which features adaptive safety check generation, effective safety check optimization, and tool compatibility & flexibility. Extensive experiments demonstrate that Agent Protector not only achieves strong performance against task-specific and system risks on various agents but also exhibits transferability among different agent tasks.
+
 ## 👻 Quick Start
 
 ### 1.Create Python environment
@@ -38,20 +44,6 @@ bash DAS/scripts/safe_os.sh
 
 ### 4.Tool Development
 Please check the /DAS/tools/tool.py and follow the interface.
-
-
-## 📰 News
-| Date       | Event    |
-|------------|----------|
-| **2024/07/09** | 🎉 Our paper is accepted by COLM 2024.|
-| **2024/06/22** | 🛠️ We have updated our version to V0.2, which allows users to customize and evaluate their attack models.|
-| **2024/04/04** | 🎁 We have posted our paper on Arxiv.|
-| **2024/04/03** | 🎉 We have released our evaluation and inference samples.|
-| **2024/03/30** | 🔥 We have released our dataset.|
-
-
-## 💡 Abstract
-
 
 
 ## 📲 Contact
