@@ -1,4 +1,4 @@
-# ⛓‍💥 AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection
+# ⛓‍💥 AGrail: A Lifelong *A*gent *G*uard*rail* with Effective and Adaptive Safety Detection
 
 [Weidi Luo](https://github.com/EddyLuo1232), [Shenghong Dai](https://scholar.google.com/citations?user=GUarSlcAAAAJ&hl=en), [Xiaogeng Liu](https://xiaogeng-liu.com/), [Suman Banerjee](https://pages.cs.wisc.edu/~suman/), [Huan Sun](https://u.osu.edu/ihudas/people/), [Muhao Chen](https://muhaochen.github.io/), [Chaowei Xiao](https://xiaocw11.github.io/)
 
