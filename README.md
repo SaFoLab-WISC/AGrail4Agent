@@ -31,10 +31,13 @@ docker run -it ubuntu
 ```
 
 ### Conduct Evaluation on Safe-OS
-Please check the scripts:
+Add your OPENAI_API_KEY and ANTHROPIC_API_KEY in DAS/utlis.py, then check and run the scripts on Safe-OS:
 ```python
 bash DAS/scripts/safe_os.sh
 ```
+
+### Tool Development
+Please check the /DAS/tools/tool.py and follow the interface.
 
 
 ## 📰 News
