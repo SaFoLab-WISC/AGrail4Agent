@@ -13,7 +13,7 @@
 
 ## 💡 Abstract
 The rapid advancements in Large Language Models (LLMs) have enabled their deployment as autonomous agents for handling complex tasks in dynamic environments. These LLMs demonstrate strong problem-solving capabilities and adaptability to multifaceted scenarios. However, their use as agents also introduces significant risks, including task-specific risks, which are identified by the agent administrator based on the specific task requirements and constraints, and systemic risks, which stem from vulnerabilities in their design or interactions, potentially compromising confidentiality, integrity, or availability (CIA) of information and triggering security risks. Existing defense agencies fail to adaptively and effectively mitigate these risks. In this paper,  we propose Agent Protector, a lifelong Agent Guardrail to enhance LLM agent safety, which features adaptive safety check generation, effective safety check optimization, and tool compatibility & flexibility. Extensive experiments demonstrate that Agent Protector not only achieves strong performance against task-specific and system risks on various agents but also exhibits transferability among different agent tasks.
-<img src="workflow.png" width="700"/>
+<img src="workflow.png" width="800"/>
 
 ## 👻 Quick Start
 
