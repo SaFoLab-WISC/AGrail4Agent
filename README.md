@@ -9,9 +9,9 @@
 
 [Weidi Luo](https://github.com/EddyLuo1232), [Shenghong Dai](https://scholar.google.com/citations?user=GUarSlcAAAAJ&hl=en), [Xiaogeng Liu](https://xiaogeng-liu.com/), [Suman Banerjee](https://pages.cs.wisc.edu/~suman/), [Huan Sun](https://u.osu.edu/ihudas/people/), [Muhao Chen](https://muhaochen.github.io/), [Chaowei Xiao](https://xiaocw11.github.io/)
 
-[![arxiv](https://img.shields.io/badge/Arxiv-2403.09513-red)]
-[![project](https://img.shields.io/badge/Project-Page-blue)]
-[![Defenses](https://img.shields.io/badge/Agent-Guardrail-green)]
+[![arxiv](https://img.shields.io/badge/Arxiv-2403.09513-red)]()
+[![project](https://img.shields.io/badge/Project-Page-blue)]()
+[![Defenses](https://img.shields.io/badge/Agent-Guardrail-green)]()
 
 
 **<font color='red'>Warning: This repo contains examples of harmful agent action, and reader discretion is recommended.</font>**
