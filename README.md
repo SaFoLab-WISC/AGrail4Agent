@@ -10,7 +10,7 @@
 
 ## 👻 Quick Start
 
-### Create Python environment
+### 1.Create Python environment
 ```python
 conda create -n agentguard python=3.9
 conda activate agentguard
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-### Create Docker Environment
+### 2.Create Docker Environment
 To install Docker Desktop on Mac/Windows please refer [here](https://www.docker.com/get-started/).
 Once the installation is complete, run the following command to check if Docker is working properly:
 ```python
@@ -30,13 +30,13 @@ docker build -t ubuntu .
 docker run -it ubuntu
 ```
 
-### Conduct Evaluation on Safe-OS
+### 3.Conduct Evaluation on Safe-OS
 Add your OPENAI_API_KEY and ANTHROPIC_API_KEY in DAS/utlis.py, then check and run the scripts on Safe-OS:
 ```python
 bash DAS/scripts/safe_os.sh
 ```
 
-### Tool Development
+### 4.Tool Development
 Please check the /DAS/tools/tool.py and follow the interface.
 
 
