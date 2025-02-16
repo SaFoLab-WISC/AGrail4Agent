@@ -8,6 +8,7 @@
 <h5 align="center">
 
 [Weidi Luo](https://github.com/EddyLuo1232), [Shenghong Dai](https://scholar.google.com/citations?user=GUarSlcAAAAJ&hl=en), [Xiaogeng Liu](https://xiaogeng-liu.com/), [Suman Banerjee](https://pages.cs.wisc.edu/~suman/), [Huan Sun](https://u.osu.edu/ihudas/people/), [Muhao Chen](https://muhaochen.github.io/), [Chaowei Xiao](https://xiaocw11.github.io/)
+
 [**🛎 Project Page**](https://eddyluo1232.github.io/JailBreakV28K/) | [**😀 arxiv**](https://arxiv.org/pdf/2404.03027.pdf)
 
 
