@@ -49,7 +49,7 @@ bash DAS/scripts/safe_os.sh
 Please check the /DAS/tools/tool.py and follow the interface.
 
 
-## 📲 Contact
+## 👍 Contact
 - Weidi Luo: luo.1455@osu.edu
 
 - Chaowei Xiao: cxiao34@wisc.edu
