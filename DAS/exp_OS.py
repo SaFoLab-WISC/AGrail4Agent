@@ -396,7 +396,7 @@ def main(args):
     elif args.dataset == "prompt_injection":
         data = read_os_dataset("data/safe-os/prompt_injection.json")
     elif args.dataset == "environment":
-        data = read_os_dataset("data/safe-os/environment.json")
+        data = read_os_dataset("data/safe-os/test.json")
     else:
         data = read_os_dataset("data/safe-os/benign.json")
 
@@ -406,6 +406,8 @@ def main(args):
     result_path = os.path.join("result", "inference", args.dataset)
     result_path = os.path.join(result_path, "safe_os", args.dataset)
     os.makedirs(result_path, exist_ok=True)
+    os.makedirs("memory", exist_ok=True)
+    retrieve_file = os.path.join("memory", args.memory)
     for index, item in tqdm(enumerate(data), desc="Processing items", total=len(data)):
         if df.iloc[index, 1] == df.iloc[index, -2]:
             continue
@@ -427,10 +429,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='benign')
-    parser.add_argument('--memory', type=str, default="memory_os_benign_claude.json")
+    parser.add_argument('--dataset', type=str, default='environment')
+    parser.add_argument('--memory', type=str, default="memory_os_environment_gpt.json")
     parser.add_argument('--agent_model', type=str, default='gpt-4o')
-    parser.add_argument('--guardrail_model', type=str, default='claude2')
+    parser.add_argument('--guardrail_model', type=str, default='gpt-4o')
     parser.add_argument('--debug', action='store_true')
     parser.add_argument('--use_guardrail', action='store_true')
     parser.add_argument('--seed', type=int, default=44)
