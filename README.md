@@ -27,8 +27,8 @@ The rapid advancements in Large Language Models (LLMs) have enabled their deploy
 
 ### 1. Create Python Environment
 ```python
-conda create -n agentguard python=3.9
-conda activate agentguard
+conda create -n AGrail python=3.9
+conda activate AGrail
 pip install -r requirements.txt
 pip install -e .
 ```
