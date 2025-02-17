@@ -396,7 +396,7 @@ def main(args):
     elif args.dataset == "prompt_injection":
         data = read_os_dataset("data/safe-os/prompt_injection.json")
     elif args.dataset == "environment":
-        data = read_os_dataset("data/safe-os/test.json")
+        data = read_os_dataset("data/safe-os/environment.json")
     else:
         data = read_os_dataset("data/safe-os/benign.json")
 
