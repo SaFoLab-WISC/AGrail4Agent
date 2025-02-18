@@ -63,5 +63,13 @@ Please check the /DAS/tools/tool.py and follow the interface.
 
 ## 📖 BibTeX:
 ```python
-
+@misc{luo2025agraillifelongagentguardrail,
+      title={AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection}, 
+      author={Weidi Luo and Shenghong Dai and Xiaogeng Liu and Suman Banerjee and Huan Sun and Muhao Chen and Chaowei Xiao},
+      year={2025},
+      eprint={2502.11448},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2502.11448}, 
+}
 ```
