@@ -46,9 +46,9 @@ docker run -it ubuntu
 ```
 
 ### 3. Dataset Download
-## [Mind2Web and EICU-AC](https://github.com/guardagent/dataset) 
-## [AdvWeb](https://github.com/AI-secure/AdvWeb)
-## [EIA](https://github.com/OSU-NLP-Group/EIA_against_webagent)
+[Mind2Web and EICU-AC](https://github.com/guardagent/dataset) 
+[AdvWeb](https://github.com/AI-secure/AdvWeb)
+[EIA](https://github.com/OSU-NLP-Group/EIA_against_webagent)
 
 ### 3. Conduct Evaluation on Safe-OS
 Check and run the scripts on Safe-OS:
