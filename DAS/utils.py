@@ -81,7 +81,7 @@ def get_response_from_openai(prompt, model_name="gpt-4o"):
         print("Cluade loading {}...".format(model_name))
         import anthropic
 
-        client = anthropic.Anthropic()
+        client = anthropic.Anthropic(api_key = os.environ["ANTHROPIC_API_KEY"])
 
         message = client.messages.create(
             model="claude-3-5-sonnet-20241022",
@@ -107,14 +107,12 @@ def get_response_from_openai(prompt, model_name="gpt-4o"):
 
 
 def extract_step_back_content(text):
-    # 使用正则表达式分别提取两部分内容
     natural_language_pattern = r"Paraphrased Natural Language:\s*(.+)"
     tool_command_language_pattern = r"Paraphrased Tool Command Language:\s*(.+)"
 
     natural_language_match = re.search(natural_language_pattern, text)
     tool_command_language_match = re.search(tool_command_language_pattern, text)
 
-    # 获取匹配到的内容
     natural_language = natural_language_match.group(1).strip() if natural_language_match else None
     tool_command_language = tool_command_language_match.group(1).strip() if tool_command_language_match else None
 
@@ -124,14 +122,12 @@ def extract_step_back_content(text):
 
 
 def detect_python_error(log: str) -> bool:
-    # 检查常见的错误模式
     error_indicators = [
         "Traceback (most recent call last):",
         "Error",
         "Exception",
         "SyntaxError"
     ]
-    # 如果日志中包含任意一个错误模式，则判定为出错
     return any(indicator in str(log) for indicator in error_indicators)
 
 
