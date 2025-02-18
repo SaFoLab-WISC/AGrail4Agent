@@ -11,7 +11,7 @@
 
 [![arxiv](https://img.shields.io/badge/Arxiv-2502.11448-red)](https://arxiv.org/abs/2502.11448)
 [![project](https://img.shields.io/badge/Project-Page-blue)](https://eddyluo1232.github.io/AGrail/)
-[![Defenses](https://img.shields.io/badge/Agent-Guardrail-green)]
+![Defenses](https://img.shields.io/badge/Agent-Guardrail-green)
 
 
 **<font color='red'>Warning: This repo contains examples of harmful agent action, and reader discretion is recommended.</font>**
