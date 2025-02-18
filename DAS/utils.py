@@ -81,8 +81,7 @@ def get_response_from_openai(prompt, model_name="gpt-4o"):
         print("Cluade loading {}...".format(model_name))
         import anthropic
 
-        client = anthropic.Anthropic(
-            api_key="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")
+        client = anthropic.Anthropic()
 
         message = client.messages.create(
             model="claude-3-5-sonnet-20241022",
