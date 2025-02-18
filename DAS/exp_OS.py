@@ -33,7 +33,6 @@ tools = {
 
 
 def extract_state(observation_text):
-    # 使用正则表达式匹配 Observation: 后的 JSON
 
     try:
         json_data = extract_json_content(observation_text)
@@ -46,8 +45,8 @@ def extract_state(observation_text):
         else:
             return "False"
     except Exception as e:
-        return "False"  # 解析失败，返回 None
-    return "False"  # 没有匹配到 JSON，返回 None
+        return "False"  
+    return "False"  
 
 
 ONE_SHOT = [
