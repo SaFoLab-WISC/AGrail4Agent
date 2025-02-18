@@ -228,7 +228,6 @@ def extract_content(text, content, n=-1):
 
 
 def capture_bool_from_string(log_str):
-    # 使用正则表达式匹配最后的 True 或 False
     match = re.search(r'(True|False)(?!.*(True|False))', log_str)
 
     if match:
