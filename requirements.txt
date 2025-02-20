@@ -48,8 +48,6 @@ contourpy==1.2.1
 cryptography==42.0.8
 cycler==0.12.1
 cymem==2.0.10
-# Editable install with no version control (DAS==0.1)
--e /Users/eddy/PycharmProjects/Agent_Guardrail
 dataclasses-json==0.5.14
 datasets==2.20.0
 debugpy @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_563_nwtkoc/croot/debugpy_1690905063850/work
