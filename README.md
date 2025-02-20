@@ -39,12 +39,12 @@ Once the installation is complete, run the following command to check if Docker 
 ```python
 docker --version
 ```
-If the installation is complete. Please create a docker image with dockerfile in the repo:
+If the installation is complete. Please create a docker image with **dockerfile (install image under the same category with dockerfile)** in the repo:
 ```python
 docker build -t ubuntu .
 docker run -it ubuntu
 ```
-
+If no error, please run all scripts and code locally.
 ### 3. Dataset Download
 Here is the data link for other data, if you can not find data resources, please contact the author of the corresponding dataset by Email:
 [Mind2Web and EICU-AC](https://github.com/guardagent/dataset) \\
