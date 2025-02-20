@@ -1,32 +1,20 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    sudo \
-    && apt-get clean
+
+RUN apt-get update && apt-get install -y sudo bash
 
 
-RUN echo "root:rootpassword" | chpasswd && \
-    usermod -aG sudo root
+RUN useradd -m -s /bin/bash user && \
+    passwd -d user && \
+    echo "user ALL=(ALL) NOPASSWD: ALL" | EDITOR='tee -a' visudo && \
+    sed -i '/user ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers
 
 
-RUN id -u user || useradd -ms /bin/bash user && \
-    echo "user:userpassword" | chpasswd
+RUN chsh -s /bin/bash user
 
 
-RUN mkdir -p /home/root /home/user && \
-    chown -R root:root /home/root && \
-    chown -R user:user /home/user
-
-
-RUN passwd -d root
-
-
-RUN chmod 700 /home/root
-
-
-USER user
+USER root
 
 
 CMD ["/bin/bash"]
+
