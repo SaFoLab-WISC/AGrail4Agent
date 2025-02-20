@@ -39,7 +39,7 @@ Once the installation is complete, run the following command to check if Docker 
 ```python
 docker --version
 ```
-If the installation is complete. Please create a docker image with dockerfile in the repo:
+If the installation is complete. Please create a docker image with **dockerfile (install image under the same category with dockerfile)** in the repo:
 ```python
 docker build -t ubuntu .
 docker run -it ubuntu
