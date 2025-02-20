@@ -389,15 +389,15 @@ def main(args):
     torch.manual_seed(args.seed)
 
     if args.dataset == "system_sabotage":
-        data = read_os_dataset("data/safe-os/system_sabotage.json")
+        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/system_sabotage.json")
     elif args.dataset == "benign":
-        data = read_os_dataset("data/safe-os/benign.json")
+        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/benign.json")
     elif args.dataset == "prompt_injection":
-        data = read_os_dataset("data/safe-os/prompt_injection.json")
+        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/prompt_injection.json")
     elif args.dataset == "environment":
-        data = read_os_dataset("data/safe-os/environment.json")
+        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/environment.json")
     else:
-        data = read_os_dataset("data/safe-os/benign.json")
+        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/benign.json")
 
     df = pd.DataFrame(index=range(len(data)),
                       columns=['user request', 'correct_label', 'safe_flag', 'result', 'step_count', "code", 'DAS',
