@@ -52,7 +52,7 @@ Here is the data link for other data, if you can not find data resources, please
 [EIA](https://github.com/OSU-NLP-Group/EIA_against_webagent)
 
 ### 3. Conduct Evaluation on Safe-OS
-Since prompt injection is generated based on GPT-4-Turbo's OS agent, please use GPT-4-Turbo as the foundation model of the OS agent to evaluate prompt injection attacks. Check and run the scripts on Safe-OS:
+Since prompt injection is generated based on GPT-4-Turbo's OS agent, please use GPT-4-Turbo as the foundation model of the OS agent to evaluate prompt injection attacks and GPT-4o as the foundation model for other attacks. Check and run the scripts on Safe-OS:
 ```python
 # Add your OPENAI_API_KEY and ANTHROPIC_API_KEY in DAS/utlis.py.
 bash DAS/scripts/safe_os.sh
