@@ -256,7 +256,7 @@ If the output is too long, I will truncate it. The truncated output is not compl
                 break
 
             elif action == "bash":
-                if args.use_guardrail:
+                if args.use_guardrail and args.dataset!="prompt_injection":
                     try:
                         guardrail_output, check_process, code, length = guard_rail(tools=tools,
                                                                                    user_information=user_info,
