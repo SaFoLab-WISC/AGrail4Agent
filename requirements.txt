@@ -313,7 +313,7 @@ torch==2.5.1
 tornado==6.4.1
 tqdm==4.66.4
 traitlets==5.14.3
-transformers==4.49.0.dev0
+transformers==4.49.0
 trio==0.26.0
 trio-websocket==0.11.1
 typer==0.12.3
