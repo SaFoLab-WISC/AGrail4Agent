@@ -35,7 +35,6 @@ certifi==2024.6.2
 cffi==1.16.0
 chardet==5.2.0
 charset-normalizer==3.3.2
-chemcrow==0.3.24
 chroma-hnswlib==0.7.3
 chromadb==0.5.3
 click==8.1.7
