@@ -63,7 +63,6 @@ docutils==0.20.1
 duckduckgo_search==6.2.5
 email_validator==2.2.0
 emoji==2.12.1
-en_core_web_sm==3.8.0
 et-xmlfile==1.1.0
 exceptiongroup==1.2.0
 executing==0.8.3
