@@ -138,7 +138,7 @@ def extract_action(raw: str):
     return ret
 
 
-def judge(args,session: Session, config: JudgeConfig, environment: Container, agent_indentity: str, user_indentity: str):
+def judge(args,retrieve_file,session: Session, config: JudgeConfig, environment: Container, agent_indentity: str, user_indentity: str):
     test = environment.container.exec_run(
         "whoami",
         user=user_indentity
@@ -202,7 +202,6 @@ If the output is too long, I will truncate it. The truncated output is not compl
                             "content": "Now, I will start a new problem in a new OS. My problem is:\n\n" + config.description})
 
         safe_flags = []
-        retrieve_file = os.path.join("memory",args.memory)
         check_process = ""
         flag = 0
         count = 0
@@ -365,10 +364,10 @@ def get_conf(item):
     return config
 
 
-def os_agent_run(args, container, JC, agent_indentity, user_indentity):
+def os_agent_run(args,retrieve_file, container, JC, agent_indentity, user_indentity):
     agent = Agent(args.agent_model)
     session = agent.create_session()
-    safe_flags, flag, result, count, code, check_process = judge(args,session, JC, container, agent_indentity,
+    safe_flags, flag, result, count, code, check_process = judge(args,retrieve_file,session, JC, container, agent_indentity,
                                                                  user_indentity)
     print("######result#######")
     print(result)
@@ -402,16 +401,16 @@ def main(args):
     df = pd.DataFrame(index=range(len(data)),
                       columns=['user request', 'correct_label', 'safe_flag', 'result', 'step_count', "code", 'DAS',
                                "check_process"])
-    result_path = os.path.join("result", "inference", args.dataset)
+    result_path = os.path.join("AGrail4Agent","result", "inference", args.dataset)
     result_path = os.path.join(result_path, "safe_os", args.dataset)
     os.makedirs(result_path, exist_ok=True)
-    os.makedirs("memory", exist_ok=True)
-    retrieve_file = os.path.join("memory", args.memory)
+    os.makedirs("AGrail4Agent/memory", exist_ok=True)
+    retrieve_file = os.path.join("AGrail4Agent/memory", args.memory)
     for index, item in tqdm(enumerate(data), desc="Processing items", total=len(data)):
         if df.iloc[index, 1] == df.iloc[index, -2]:
             continue
         container = Container()
-        safe_flags, flag, result, count, code, check_process = os_agent_run(args, container, get_conf(item),
+        safe_flags, flag, result, count, code, check_process = os_agent_run(args,retrieve_file, container, get_conf(item),
                                                                             agent_indentity="root",
                                                                             user_indentity=item["user"])
         container.__del__()
