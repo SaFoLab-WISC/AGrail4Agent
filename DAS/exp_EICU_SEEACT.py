@@ -78,10 +78,10 @@ def main(args):
     random.seed(args.seed)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
-    os.makedirs("memory", exist_ok=True)
-    retrieve_file = os.path.join("memory", args.memory)  # memory
+    os.makedirs("AGrail4Agent","memory", exist_ok=True)
+    retrieve_file = os.path.join("AGrail4Agent","memory", args.memory)  # memory
 
-    result_path = os.path.join("result", "inference", args.dataset)
+    result_path = os.path.join("AGrail4Agent","result", "inference", args.dataset)
     os.makedirs(result_path, exist_ok=True)
     result_path = result_path + "/" + args.model + ".csv"
 
