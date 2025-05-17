@@ -124,8 +124,8 @@ if __name__ == "__main__":
         count = 0
         total = 0
         for i in tqdm(range(len(file))):
-            if file.iloc[i, -2] == file.iloc[i, 1]:
+            if not file.iloc[i, -2] == file.iloc[i, 1]:
                     total += 1
             else:
                 print(i)
-        print("Accuracy:{}".format(total / (len(file) - count)))
+        print("ASR:{}".format(total / (len(file) - count)))
