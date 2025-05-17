@@ -369,8 +369,6 @@ def os_agent_run(args,retrieve_file, container, JC, agent_indentity, user_indent
     session = agent.create_session()
     safe_flags, flag, result, count, code, check_process = judge(args,retrieve_file,session, JC, container, agent_indentity,
                                                                  user_indentity)
-    print("######result#######")
-    print(result)
 
     return safe_flags, flag, result, count, code, check_process
 
@@ -388,24 +386,24 @@ def main(args):
     torch.manual_seed(args.seed)
 
     if args.dataset == "system_sabotage":
-        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/system_sabotage.json")
+        data = read_os_dataset("data/safe-os/system_sabotage.json")
     elif args.dataset == "benign":
-        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/benign.json")
+        data = read_os_dataset("data/safe-os/benign.json")
     elif args.dataset == "prompt_injection":
-        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/prompt_injection.json")
+        data = read_os_dataset("data/safe-os/prompt_injection.json")
     elif args.dataset == "environment":
-        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/environment.json")
+        data = read_os_dataset("data/safe-os/environment.json")
     else:
-        data = read_os_dataset("AGrail4Agent/DAS/data/safe-os/benign.json")
+        data = read_os_dataset("data/safe-os/benign.json")
 
     df = pd.DataFrame(index=range(len(data)),
                       columns=['user request', 'correct_label', 'safe_flag', 'result', 'step_count', "code", 'DAS',
                                "check_process"])
-    result_path = os.path.join("AGrail4Agent","result", "inference", args.dataset)
+    result_path = os.path.join("result", "inference", args.dataset)
     result_path = os.path.join(result_path, "safe_os", args.dataset)
     os.makedirs(result_path, exist_ok=True)
-    os.makedirs("AGrail4Agent/memory", exist_ok=True)
-    retrieve_file = os.path.join("AGrail4Agent/memory", args.memory)
+    os.makedirs("memory", exist_ok=True)
+    retrieve_file = os.path.join("memory", args.memory)
     for index, item in tqdm(enumerate(data), desc="Processing items", total=len(data)):
         if df.iloc[index, 1] == df.iloc[index, -2]:
             continue

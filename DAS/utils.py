@@ -203,15 +203,17 @@ def add_json_to_file(file_path, add_data, structure_file):
         print(f"Error while adding JSON data to file: {e}")
 
 
+import os
+import json
+
 def create_blank_json_if_not_exists(file_path):
-    # Check if the file exists
     if not os.path.isfile(file_path):
-        # Create a blank JSON file
         with open(file_path, 'w') as file:
-            json.dump({}, file)  # Write an empty dictionary to the file
+            json.dump([{}], file)  # 创建一个包含一个空字典的列表
         print(f'{file_path} created successfully.')
     else:
         print(f'{file_path} already exists.')
+
 
 
 def extract_content(text, content, n=-1):

@@ -352,7 +352,7 @@ def guard_rail(tools, user_information, agent_action, agent_specification, agent
                 "agent_action": agent_action,
                 "tool_check_list": tool_checks[item],
                 "agent_specification": agent_specification,
-                "agent_model": "claude-3-5-sonnet-20241022",
+                "agent_model": agent_model,
                 "user_identity": user_indentity,
                 "agent_usage_principles": agent_usage_principles
             }
